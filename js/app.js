@@ -60,7 +60,6 @@ sortSelectEl.addEventListener("change", (event) => {
   renderCards(clientEl, clients);
 });
 
-
 searchFormEl.addEventListener("submit", (event) => {
   event.preventDefault();
   const query = event.target.search.value
@@ -79,4 +78,3 @@ searchFormEl.addEventListener("submit", (event) => {
   });
   renderCards(clientEl, filteredClients);
 });
-
