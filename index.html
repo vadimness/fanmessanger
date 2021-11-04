@@ -19,19 +19,8 @@
     <div class="container bg">
       <div class="row">
           <div class="row justify-content-center align-items-center">
-            <div class="col-2 fw-bold">Сообщения:</div>
-            <div class="col-2 fw-bold">Непрочитанные:</div>
-            <div class="col-2">
-              <select class="form-select" id="sortSelect">
-                <option selected disabled>Сортировка...</option>
-                <option value="name/1">Имя абонента (A-Z)</option>
-                <option value="name/-1">Имя абонента (Z-A)</option>
-                <option value="seen/1">Просмотренные</option>
-                <option value="seen/-1">Не просмотренные</option>
-                <option value="date/1">Дата(старая)</option>
-                <option value="date/-1">Дата (новая)</option>
-              </select>
-            </div>
+            <div class="col-3 fw-bold text-light">Сообщения: <span id="allCount">0</span></div>
+            <div class="col-3 fw-bold text-light">Непрочитанные: <span id="unreadCount">0</span></div>
             <div class="col-4">
               <form id="searchForm">
                 <div class="row">
