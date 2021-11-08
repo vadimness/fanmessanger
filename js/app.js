@@ -5,7 +5,7 @@ const searchFormEl = document.getElementById('searchForm');
 const allCountEl = document.getElementById('allCount');
 const unreadCountEl = document.getElementById('unreadCount');
 
-
+// Просмотр
 clientEl.addEventListener('click', e => {
   if (e.target.matches('.card-text')) {
     console.log('click on text!');
@@ -25,7 +25,7 @@ clientEl.addEventListener('click', e => {
   }
 })
 
-
+// Рендеринг
 function createCardHtml(cardData) {
   const date = new Date(cardData.date);
   const time = date.toLocaleTimeString();
@@ -58,11 +58,12 @@ function createCardHtml(cardData) {
 
 renderCards(clientEl, clients);
 
+// Счетик
 function renderCounters(dataArray) {
   allCountEl.textContent = dataArray.length
   unreadCountEl.textContent = dataArray.filter(message => !message.seen).length;
 }
-
+// Сортировка
 function renderCards(elemToRender, dataArray) {
   dataArray.sort((a, b) => {
     return a.seen - b.seen || b.date - a.date;
@@ -74,7 +75,7 @@ function renderCards(elemToRender, dataArray) {
 function createCardsHtml(dataArray) {
   return dataArray.map((data) => createCardHtml(data));
 }
-
+// Поиск
 searchFormEl.addEventListener('submit', (event) => {
   event.preventDefault();
   const query = event.target.search.value
